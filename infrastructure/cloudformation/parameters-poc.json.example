@@ -1,0 +1,18 @@
+[
+  {
+    "ParameterKey": "ProjectName",
+    "ParameterValue": "graphrag-fraud-poc"
+  },
+  {
+    "ParameterKey": "Environment",
+    "ParameterValue": "poc"
+  },
+  {
+    "ParameterKey": "Owner",
+    "ParameterValue": "YOUR_EMPLOYEE_ID"
+  },
+  {
+    "ParameterKey": "NeptuneGraphId",
+    "ParameterValue": "YOUR_NEPTUNE_GRAPH_ID"
+  }
+]
