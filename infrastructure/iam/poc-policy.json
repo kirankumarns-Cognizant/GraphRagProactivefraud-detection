@@ -1,0 +1,108 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3DataAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:ListBucket",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::graphrag-fraud-poc-975049936238",
+        "arn:aws:s3:::graphrag-fraud-poc-975049936238/*"
+      ]
+    },
+    {
+      "Sid": "NeptuneAnalyticsAccess",
+      "Effect": "Allow",
+      "Action": [
+        "neptune-graph:CreateGraph",
+        "neptune-graph:CreateGraphUsingImportTask",
+        "neptune-graph:DeleteGraph",
+        "neptune-graph:GetGraph",
+        "neptune-graph:ListGraphs",
+        "neptune-graph:ExecuteQuery",
+        "neptune-graph:ListImportTasks",
+        "neptune-graph:GetImportTask"
+      ],
+      "Resource": "arn:aws:neptune-graph:us-east-1:975049936238:graph/*"
+    },
+    {
+      "Sid": "BedrockKBAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:CreateKnowledgeBase",
+        "bedrock:DeleteKnowledgeBase",
+        "bedrock:GetKnowledgeBase",
+        "bedrock:ListKnowledgeBases",
+        "bedrock:CreateDataSource",
+        "bedrock:StartIngestionJob",
+        "bedrock:GetIngestionJob"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BedrockAgentAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:CreateAgent",
+        "bedrock:DeleteAgent",
+        "bedrock:GetAgent",
+        "bedrock:CreateAgentActionGroup",
+        "bedrock:PrepareAgent",
+        "bedrock:InvokeAgent"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BedrockModelAccess",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+      ],
+      "Resource": [
+        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0",
+        "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
+        "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-embed-text-v2:0",
+        "arn:aws:bedrock:us-east-1:975049936238:inference-profile/us.anthropic.claude-sonnet-4-20250514-v1:0",
+        "arn:aws:bedrock:us-east-1:975049936238:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0"
+      ]
+    },
+    {
+      "Sid": "LambdaManagement",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:DeleteFunction",
+        "lambda:GetFunction",
+        "lambda:InvokeFunction",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration",
+        "lambda:AddPermission"
+      ],
+      "Resource": "arn:aws:lambda:us-east-1:975049936238:function:graphrag-fraud-*"
+    },
+    {
+      "Sid": "IAMRoleManagement",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:GetRole",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::975049936238:role/graphrag-fraud-*",
+        "arn:aws:iam::975049936238:role/NeptuneAnalytics-*"
+      ]
+    }
+  ]
+}

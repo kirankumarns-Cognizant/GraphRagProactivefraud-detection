@@ -1,0 +1,57 @@
+SUSPICIOUS ACTIVITY REPORT (SAR)
+============================================================
+Report ID: SAR-RING-5
+Date Filed: 2026-04-03
+Filing Institution: AnyCompany Bank (Australia)
+Report Type: Coordinated Fraud Network
+
+SUBJECT INFORMATION
+-------------------
+Ring Name: Identity Layering Ring
+Pattern Type: identity_layering
+Number of Subjects: 4
+
+Subjects:
+  - Michael Phillips (C0023)
+  - Zoe Donovan (C0015)
+  - Elaine Thompson (C0004)
+  - David Osborne (C0086)
+
+Accounts Involved:
+  - A0004
+  - A0015
+  - A0023
+  - A0086
+  - A0105
+  - A0111
+
+Shared Devices:
+  - D0022
+
+Shared IP Addresses:
+  - None identified
+
+NARRATIVE
+---------
+Chain of accounts where money flows A to B to C to D to obscure the origin.
+
+Between 2024-01-01 and 2024-06-30,
+the above-named subjects conducted 59 suspicious transactions
+totaling AUD 1,490,663.60 through accounts linked by shared devices
+and network indicators.
+
+The investigation revealed that these accounts are connected through:
+1. Shared device fingerprints (D0022)
+2. Overlapping IP addresses used for account access
+3. Coordinated transaction timing patterns
+4. Transactions directed to high-risk merchant categories
+
+RECOMMENDED ACTIONS
+-------------------
+- Freeze accounts: A0004, A0015, A0023, A0086, A0105, A0111
+- Enhanced monitoring on associated devices
+- Escalate to law enforcement if threshold exceeded
+- File additional SARs as investigation progresses
+
+============================================================
+END OF REPORT

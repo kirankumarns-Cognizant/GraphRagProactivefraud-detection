@@ -1,0 +1,62 @@
+SUSPICIOUS ACTIVITY REPORT (SAR)
+============================================================
+Report ID: SAR-RING-1
+Date Filed: 2026-04-03
+Filing Institution: AnyCompany Bank (Australia)
+Report Type: Coordinated Fraud Network
+
+SUBJECT INFORMATION
+-------------------
+Ring Name: Device Sharing Ring
+Pattern Type: shared_device
+Number of Subjects: 5
+
+Subjects:
+  - John May (C0073)
+  - Joseph Orozco (C0027)
+  - Guy Gonzales (C0009)
+  - Kyle Wright (C0071)
+  - Lorraine Johnson (C0099)
+
+Accounts Involved:
+  - A0009
+  - A0027
+  - A0071
+  - A0073
+  - A0099
+  - A0110
+  - A0120
+  - A0140
+  - A0143
+
+Shared Devices:
+  - D0007
+  - D0048
+
+Shared IP Addresses:
+  - None identified
+
+NARRATIVE
+---------
+Multiple accounts accessed from the same physical devices across different customers.
+
+Between 2024-01-01 and 2024-06-30,
+the above-named subjects conducted 88 suspicious transactions
+totaling AUD 470,798.08 through accounts linked by shared devices
+and network indicators.
+
+The investigation revealed that these accounts are connected through:
+1. Shared device fingerprints (D0007, D0048)
+2. Overlapping IP addresses used for account access
+3. Coordinated transaction timing patterns
+4. Transactions directed to high-risk merchant categories
+
+RECOMMENDED ACTIONS
+-------------------
+- Freeze accounts: A0009, A0027, A0071, A0073, A0099, A0110, A0120, A0140, A0143
+- Enhanced monitoring on associated devices
+- Escalate to law enforcement if threshold exceeded
+- File additional SARs as investigation progresses
+
+============================================================
+END OF REPORT

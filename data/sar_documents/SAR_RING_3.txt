@@ -1,0 +1,57 @@
+SUSPICIOUS ACTIVITY REPORT (SAR)
+============================================================
+Report ID: SAR-RING-3
+Date Filed: 2026-04-03
+Filing Institution: AnyCompany Bank (Australia)
+Report Type: Coordinated Fraud Network
+
+SUBJECT INFORMATION
+-------------------
+Ring Name: Merchant Collusion Ring
+Pattern Type: merchant_collusion
+Number of Subjects: 4
+
+Subjects:
+  - Nathan Figueroa (C0043)
+  - Harry Patton (C0019)
+  - Michael Perry (C0077)
+  - Amanda Sheppard (C0001)
+
+Accounts Involved:
+  - A0001
+  - A0019
+  - A0043
+  - A0077
+  - A0121
+  - A0126
+
+Shared Devices:
+  - D0028
+
+Shared IP Addresses:
+  - None identified
+
+NARRATIVE
+---------
+Coordinated transactions to specific high-risk merchants with round-number amounts.
+
+Between 2024-01-01 and 2024-06-30,
+the above-named subjects conducted 59 suspicious transactions
+totaling AUD 187,500.00 through accounts linked by shared devices
+and network indicators.
+
+The investigation revealed that these accounts are connected through:
+1. Shared device fingerprints (D0028)
+2. Overlapping IP addresses used for account access
+3. Coordinated transaction timing patterns
+4. Transactions directed to high-risk merchant categories
+
+RECOMMENDED ACTIONS
+-------------------
+- Freeze accounts: A0001, A0019, A0043, A0077, A0121, A0126
+- Enhanced monitoring on associated devices
+- Escalate to law enforcement if threshold exceeded
+- File additional SARs as investigation progresses
+
+============================================================
+END OF REPORT

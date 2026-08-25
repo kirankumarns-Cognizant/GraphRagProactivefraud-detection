@@ -1,0 +1,21 @@
+ip_id,address,geo_location,country,is_vpn,is_tor,isp
+IP0001,132.194.30.93,Sydney,AU,False,False,Telstra
+IP0002,170.33.177.1,Lagos,NG,False,False,Azure
+IP0003,141.66.20.30,London,UK,False,False,DigitalOcean
+IP0004,57.125.174.148,New York,US,True,True,Telstra
+IP0005,143.99.229.125,New York,US,False,False,Optus
+IP0006,186.157.135.230,Melbourne,AU,False,False,Vodafone
+IP0007,210.130.122.201,London,UK,False,False,Telstra
+IP0008,198.141.191.12,Brisbane,AU,True,True,Vodafone
+IP0009,132.221.123.164,Melbourne,AU,True,False,Optus
+IP0010,195.150.57.82,Singapore,SG,False,False,Azure
+IP0011,60.213.208.121,Singapore,SG,False,False,Azure
+IP0012,103.128.111.239,Brisbane,AU,False,False,Azure
+IP0013,56.83.28.135,Melbourne,AU,False,False,AWS
+IP0014,215.226.234.166,Singapore,SG,False,False,TPG
+IP0015,73.222.193.153,Sydney,AU,False,False,Optus
+IP0016,194.157.250.194,Lagos,NG,False,False,Optus
+IP0017,134.209.186.247,New York,US,True,False,AWS
+IP0018,1.227.180.107,New York,US,True,True,Telstra
+IP0019,133.150.71.34,Lagos,NG,True,True,Azure
+IP0020,154.29.101.81,Sydney,AU,True,False,Optus

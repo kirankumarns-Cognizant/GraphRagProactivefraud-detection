@@ -1,0 +1,59 @@
+SUSPICIOUS ACTIVITY REPORT (SAR)
+============================================================
+Report ID: SAR-RING-4
+Date Filed: 2026-04-03
+Filing Institution: AnyCompany Bank (Australia)
+Report Type: Coordinated Fraud Network
+
+SUBJECT INFORMATION
+-------------------
+Ring Name: Velocity Abuse Ring
+Pattern Type: velocity_abuse
+Number of Subjects: 5
+
+Subjects:
+  - Joseph Kelly (C0036)
+  - Maurice Atkinson (C0091)
+  - Norman Beck (C0017)
+  - Mason Jones (C0070)
+  - Cynthia Robertson (C0033)
+
+Accounts Involved:
+  - A0017
+  - A0033
+  - A0036
+  - A0070
+  - A0091
+  - A0109
+
+Shared Devices:
+  - D0013
+  - D0012
+
+Shared IP Addresses:
+  - None identified
+
+NARRATIVE
+---------
+Burst transactions across linked accounts within minutes of each other.
+
+Between 2024-01-01 and 2024-06-30,
+the above-named subjects conducted 54 suspicious transactions
+totaling AUD 62,155.92 through accounts linked by shared devices
+and network indicators.
+
+The investigation revealed that these accounts are connected through:
+1. Shared device fingerprints (D0013, D0012)
+2. Overlapping IP addresses used for account access
+3. Coordinated transaction timing patterns
+4. Transactions directed to high-risk merchant categories
+
+RECOMMENDED ACTIONS
+-------------------
+- Freeze accounts: A0017, A0033, A0036, A0070, A0091, A0109
+- Enhanced monitoring on associated devices
+- Escalate to law enforcement if threshold exceeded
+- File additional SARs as investigation progresses
+
+============================================================
+END OF REPORT

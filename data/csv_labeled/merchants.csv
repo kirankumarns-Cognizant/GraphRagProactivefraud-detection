@@ -1,0 +1,31 @@
+merchant_id,merchant_name,category,location,country,latitude,longitude,risk_tier,registration_date
+M0001,David-Powers,electronics,Singapore,SG,1.5947,104.0252,low,2020-09-18
+M0002,Miles-Hodgson,jewelry,Singapore,SG,1.3453,103.357,low,2022-07-31
+M0003,Atkinson LLC,grocery,New York,US,40.3097,-73.5996,medium,2019-03-26
+M0004,Hart Group,restaurant,Sydney,AU,-33.4991,151.68,medium,2022-07-06
+M0005,Sanchez-Harris,gaming,Melbourne,AU,-37.5285,144.725,high,2018-09-04
+M0006,Davis-Hardy,grocery,Singapore,SG,1.7023,104.1793,low,2018-06-11
+M0007,Nunez-Morrison,travel,Singapore,SG,1.7224,103.3559,medium,2019-08-09
+M0008,"Davies, Brennan and Kelly",gas_station,Melbourne,AU,-37.3126,145.2068,low,2020-07-31
+M0009,Giles Ltd,grocery,Singapore,SG,1.2937,104.014,low,2022-01-28
+M0010,"Munoz, Harris and Herman",electronics,Sydney,AU,-33.5739,151.0034,low,2020-09-27
+M0011,Owens-Wong,jewelry,New York,US,40.4542,-74.0979,low,2020-03-24
+M0012,"Andrade, Owens and Lang",restaurant,Brisbane,AU,-27.891,153.4008,low,2021-12-30
+M0013,Wood Group,gaming,Perth,AU,-31.5372,115.5031,high,2022-10-15
+M0014,"Thomas, Green and Donovan",online_retail,Lagos,NG,6.2753,2.8894,medium,2021-07-22
+M0015,Gonzalez and Sons,online_retail,Lagos,NG,6.178,3.3217,medium,2022-11-07
+M0016,Pierce-Harding,money_transfer,New York,US,40.5092,-73.548,high,2020-03-11
+M0017,"May, Henry and Jackson",gaming,London,UK,51.8553,-0.4308,high,2019-06-11
+M0018,"Payne, White and Preston",gaming,Singapore,SG,0.9567,103.7014,high,2018-07-03
+M0019,Bryant Inc,money_transfer,New York,US,40.5059,-73.8107,high,2018-06-01
+M0020,Taylor-Mccoy,jewelry,Sydney,AU,-34.3619,151.5751,low,2019-04-16
+M0021,Wagner LLC,money_transfer,Sydney,AU,-33.6248,151.5428,high,2023-04-05
+M0022,"McDonald, Walker and Slater",gas_station,London,UK,51.8119,-0.411,high,2018-01-22
+M0023,"Ali, Brown and Wood",money_transfer,Perth,AU,-32.1994,116.1156,high,2020-06-10
+M0024,"Li, Craig and Drake",grocery,Brisbane,AU,-27.6611,152.9708,low,2018-11-30
+M0025,"Hernandez, Lee and Fox",restaurant,New York,US,41.1196,-74.1833,low,2020-04-11
+M0026,Watson Group,restaurant,Singapore,SG,0.9822,103.8594,low,2022-10-23
+M0027,"Perez, Sutton and Abbott",cryptocurrency,New York,US,40.7118,-74.2375,high,2018-04-10
+M0028,Gray-Tran,online_retail,Brisbane,AU,-27.0026,152.8251,medium,2023-06-03
+M0029,"Jackson, Porter and Hamilton",grocery,New York,US,41.1729,-74.3692,medium,2022-10-26
+M0030,"Ellison, Hall and Valenzuela",jewelry,Perth,AU,-32.0842,116.1507,medium,2022-10-28

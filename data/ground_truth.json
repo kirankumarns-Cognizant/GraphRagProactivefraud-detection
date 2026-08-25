@@ -1,0 +1,408 @@
+{
+  "fraud_rings": [
+    {
+      "ring_id": "RING-1",
+      "ring_name": "Device Sharing Ring",
+      "pattern": "shared_device",
+      "description": "Multiple accounts accessed from the same physical devices across different customers.",
+      "member_count": 5,
+      "member_customer_ids": [
+        "C0073",
+        "C0027",
+        "C0009",
+        "C0071",
+        "C0099"
+      ],
+      "member_account_ids": [
+        "A0009",
+        "A0027",
+        "A0071",
+        "A0073",
+        "A0099",
+        "A0110",
+        "A0120",
+        "A0140",
+        "A0143"
+      ],
+      "shared_device_ids": [
+        "D0007",
+        "D0048"
+      ],
+      "shared_ip_ids": []
+    },
+    {
+      "ring_id": "RING-2",
+      "ring_name": "IP Rotation Ring",
+      "pattern": "ip_rotation",
+      "description": "Accounts using VPN/Tor IPs to mask geographic origin, rotating through shared infrastructure.",
+      "member_count": 3,
+      "member_customer_ids": [
+        "C0076",
+        "C0028",
+        "C0030"
+      ],
+      "member_account_ids": [
+        "A0028",
+        "A0030",
+        "A0076"
+      ],
+      "shared_device_ids": [
+        "D0034",
+        "D0043"
+      ],
+      "shared_ip_ids": [
+        "IP0009",
+        "IP0004"
+      ]
+    },
+    {
+      "ring_id": "RING-3",
+      "ring_name": "Merchant Collusion Ring",
+      "pattern": "merchant_collusion",
+      "description": "Coordinated transactions to specific high-risk merchants with round-number amounts.",
+      "member_count": 4,
+      "member_customer_ids": [
+        "C0043",
+        "C0019",
+        "C0077",
+        "C0001"
+      ],
+      "member_account_ids": [
+        "A0001",
+        "A0019",
+        "A0043",
+        "A0077",
+        "A0121",
+        "A0126"
+      ],
+      "shared_device_ids": [
+        "D0028"
+      ],
+      "shared_ip_ids": []
+    },
+    {
+      "ring_id": "RING-4",
+      "ring_name": "Velocity Abuse Ring",
+      "pattern": "velocity_abuse",
+      "description": "Burst transactions across linked accounts within minutes of each other.",
+      "member_count": 5,
+      "member_customer_ids": [
+        "C0036",
+        "C0091",
+        "C0017",
+        "C0070",
+        "C0033"
+      ],
+      "member_account_ids": [
+        "A0017",
+        "A0033",
+        "A0036",
+        "A0070",
+        "A0091",
+        "A0109"
+      ],
+      "shared_device_ids": [
+        "D0013",
+        "D0012"
+      ],
+      "shared_ip_ids": []
+    },
+    {
+      "ring_id": "RING-5",
+      "ring_name": "Identity Layering Ring",
+      "pattern": "identity_layering",
+      "description": "Chain of accounts where money flows A to B to C to D to obscure the origin.",
+      "member_count": 4,
+      "member_customer_ids": [
+        "C0023",
+        "C0015",
+        "C0004",
+        "C0086"
+      ],
+      "member_account_ids": [
+        "A0004",
+        "A0015",
+        "A0023",
+        "A0086",
+        "A0105",
+        "A0111"
+      ],
+      "shared_device_ids": [
+        "D0022"
+      ],
+      "shared_ip_ids": []
+    }
+  ],
+  "ground_truth_events": [
+    {
+      "type": "fraud_ring",
+      "id": "RING-1",
+      "details": {
+        "ring_id": "RING-1",
+        "ring_name": "Device Sharing Ring",
+        "pattern": "shared_device",
+        "description": "Multiple accounts accessed from the same physical devices across different customers.",
+        "member_count": 5,
+        "member_customer_ids": [
+          "C0073",
+          "C0027",
+          "C0009",
+          "C0071",
+          "C0099"
+        ],
+        "member_account_ids": [
+          "A0009",
+          "A0027",
+          "A0071",
+          "A0073",
+          "A0099",
+          "A0110",
+          "A0120",
+          "A0140",
+          "A0143"
+        ],
+        "shared_device_ids": [
+          "D0007",
+          "D0048"
+        ],
+        "shared_ip_ids": []
+      }
+    },
+    {
+      "type": "fraud_ring",
+      "id": "RING-2",
+      "details": {
+        "ring_id": "RING-2",
+        "ring_name": "IP Rotation Ring",
+        "pattern": "ip_rotation",
+        "description": "Accounts using VPN/Tor IPs to mask geographic origin, rotating through shared infrastructure.",
+        "member_count": 3,
+        "member_customer_ids": [
+          "C0076",
+          "C0028",
+          "C0030"
+        ],
+        "member_account_ids": [
+          "A0028",
+          "A0030",
+          "A0076"
+        ],
+        "shared_device_ids": [
+          "D0034",
+          "D0043"
+        ],
+        "shared_ip_ids": [
+          "IP0009",
+          "IP0004"
+        ]
+      }
+    },
+    {
+      "type": "fraud_ring",
+      "id": "RING-3",
+      "details": {
+        "ring_id": "RING-3",
+        "ring_name": "Merchant Collusion Ring",
+        "pattern": "merchant_collusion",
+        "description": "Coordinated transactions to specific high-risk merchants with round-number amounts.",
+        "member_count": 4,
+        "member_customer_ids": [
+          "C0043",
+          "C0019",
+          "C0077",
+          "C0001"
+        ],
+        "member_account_ids": [
+          "A0001",
+          "A0019",
+          "A0043",
+          "A0077",
+          "A0121",
+          "A0126"
+        ],
+        "shared_device_ids": [
+          "D0028"
+        ],
+        "shared_ip_ids": []
+      }
+    },
+    {
+      "type": "fraud_ring",
+      "id": "RING-4",
+      "details": {
+        "ring_id": "RING-4",
+        "ring_name": "Velocity Abuse Ring",
+        "pattern": "velocity_abuse",
+        "description": "Burst transactions across linked accounts within minutes of each other.",
+        "member_count": 5,
+        "member_customer_ids": [
+          "C0036",
+          "C0091",
+          "C0017",
+          "C0070",
+          "C0033"
+        ],
+        "member_account_ids": [
+          "A0017",
+          "A0033",
+          "A0036",
+          "A0070",
+          "A0091",
+          "A0109"
+        ],
+        "shared_device_ids": [
+          "D0013",
+          "D0012"
+        ],
+        "shared_ip_ids": []
+      }
+    },
+    {
+      "type": "fraud_ring",
+      "id": "RING-5",
+      "details": {
+        "ring_id": "RING-5",
+        "ring_name": "Identity Layering Ring",
+        "pattern": "identity_layering",
+        "description": "Chain of accounts where money flows A to B to C to D to obscure the origin.",
+        "member_count": 4,
+        "member_customer_ids": [
+          "C0023",
+          "C0015",
+          "C0004",
+          "C0086"
+        ],
+        "member_account_ids": [
+          "A0004",
+          "A0015",
+          "A0023",
+          "A0086",
+          "A0105",
+          "A0111"
+        ],
+        "shared_device_ids": [
+          "D0022"
+        ],
+        "shared_ip_ids": []
+      }
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "velocity_burst",
+      "account_id": "A0020",
+      "description": "15 txns within 1 hour at 2024-02-26T09:31:32.889823"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "velocity_burst",
+      "account_id": "A0095",
+      "description": "15 txns within 1 hour at 2024-05-26T10:28:18.437022"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "velocity_burst",
+      "account_id": "A0130",
+      "description": "15 txns within 1 hour at 2024-06-10T13:43:57.012060"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "velocity_burst",
+      "account_id": "A0127",
+      "description": "15 txns within 1 hour at 2024-01-08T01:56:18.031798"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "velocity_burst",
+      "account_id": "A0096",
+      "description": "15 txns within 1 hour at 2024-05-11T02:09:23.740377"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "off_hours_activity",
+      "account_id": "A0098",
+      "description": "Multiple transactions between 2-5am local time"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "off_hours_activity",
+      "account_id": "A0149",
+      "description": "Multiple transactions between 2-5am local time"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "off_hours_activity",
+      "account_id": "A0144",
+      "description": "Multiple transactions between 2-5am local time"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "off_hours_activity",
+      "account_id": "A0150",
+      "description": "Multiple transactions between 2-5am local time"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "card_testing",
+      "account_id": "A0147",
+      "description": "3 failed small txns followed by successful large txns within minutes at 2024-01-31T19:29:25.085386"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "card_testing",
+      "account_id": "A0118",
+      "description": "3 failed small txns followed by successful large txns within minutes at 2024-01-04T18:28:18.574818"
+    },
+    {
+      "type": "temporal_anomaly",
+      "subtype": "card_testing",
+      "account_id": "A0045",
+      "description": "3 failed small txns followed by successful large txns within minutes at 2024-03-26T12:50:11.235680"
+    },
+    {
+      "type": "geographic_anomaly",
+      "subtype": "impossible_travel",
+      "account_id": "A0018",
+      "description": "POS txn in Sydney at 09:XX and London at 14:XX on 2024-05-13 \u2014 16994 km apart"
+    },
+    {
+      "type": "geographic_anomaly",
+      "subtype": "impossible_travel",
+      "account_id": "A0052",
+      "description": "POS txn in Melbourne at 09:XX and New York at 14:XX on 2024-02-15 \u2014 16672 km apart"
+    },
+    {
+      "type": "geographic_anomaly",
+      "subtype": "impossible_travel",
+      "account_id": "A0131",
+      "description": "POS txn in Brisbane at 09:XX and Lagos at 14:XX on 2024-05-20 \u2014 16056 km apart"
+    }
+  ],
+  "statistics": {
+    "total_customers": 100,
+    "total_accounts": 150,
+    "total_devices": 50,
+    "total_merchants": 30,
+    "total_ip_addresses": 20,
+    "total_transactions": 1364,
+    "total_relationships": 3347,
+    "fraud_rings": 5,
+    "fraud_customers": 21,
+    "fraud_accounts": 30,
+    "fraud_transactions": 404,
+    "fraud_transaction_pct": 29.6,
+    "total_fraud_amount": 2427755.66,
+    "temporal_anomalies": 12,
+    "geographic_anomalies": 3,
+    "fraud_patterns_embedded": [
+      "off_hours",
+      "velocity_abuse",
+      "impossible_travel",
+      "card_testing",
+      "shared_device",
+      "velocity_burst",
+      "merchant_collusion",
+      "identity_layering",
+      "ip_rotation"
+    ]
+  }
+}

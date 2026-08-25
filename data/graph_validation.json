@@ -1,0 +1,21 @@
+{
+  "expected_node_counts": {
+    "Customer": 100,
+    "Account": 150,
+    "Device": 50,
+    "Merchant": 30,
+    "IP_Address": 20,
+    "Transaction": 1364
+  },
+  "expected_total_nodes": 1714,
+  "expected_edge_type_counts": {
+    "LOGGED_IN_FROM": 300,
+    "SHARED_DEVICE": 84,
+    "KNOWN_ASSOCIATE": 35,
+    "INITIATED_BY": 1364,
+    "PURCHASED_AT": 1364,
+    "OWNS": 150,
+    "CONNECTED_VIA": 50
+  },
+  "expected_total_edges": 3347
+}

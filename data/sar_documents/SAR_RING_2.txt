@@ -1,0 +1,55 @@
+SUSPICIOUS ACTIVITY REPORT (SAR)
+============================================================
+Report ID: SAR-RING-2
+Date Filed: 2026-04-03
+Filing Institution: AnyCompany Bank (Australia)
+Report Type: Coordinated Fraud Network
+
+SUBJECT INFORMATION
+-------------------
+Ring Name: IP Rotation Ring
+Pattern Type: ip_rotation
+Number of Subjects: 3
+
+Subjects:
+  - Jamie Price (C0076)
+  - Michelle Williams (C0028)
+  - Kerry Stanley (C0030)
+
+Accounts Involved:
+  - A0028
+  - A0030
+  - A0076
+
+Shared Devices:
+  - D0034
+  - D0043
+
+Shared IP Addresses:
+  - IP0009
+  - IP0004
+
+NARRATIVE
+---------
+Accounts using VPN/Tor IPs to mask geographic origin, rotating through shared infrastructure.
+
+Between 2024-01-01 and 2024-06-30,
+the above-named subjects conducted 28 suspicious transactions
+totaling AUD 147,776.32 through accounts linked by shared devices
+and network indicators.
+
+The investigation revealed that these accounts are connected through:
+1. Shared device fingerprints (D0034, D0043)
+2. Overlapping IP addresses used for account access
+3. Coordinated transaction timing patterns
+4. Transactions directed to high-risk merchant categories
+
+RECOMMENDED ACTIONS
+-------------------
+- Freeze accounts: A0028, A0030, A0076
+- Enhanced monitoring on associated devices
+- Escalate to law enforcement if threshold exceeded
+- File additional SARs as investigation progresses
+
+============================================================
+END OF REPORT

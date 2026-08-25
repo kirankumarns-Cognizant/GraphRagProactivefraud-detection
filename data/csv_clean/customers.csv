@@ -1,0 +1,101 @@
+customer_id,first_name,last_name,email,phone,date_of_birth,region,country,risk_score,created_date
+C0001,Nathan,Figueroa,donaldgarcia@example.net,+44(0)114 4960960,1956-08-17,Sydney,AU,0.722,2020-12-24
+C0002,Mandy,Hoffman,lquinn@example.com,08-5423-5116,1974-09-06,Melbourne,AU,0.221,2021-04-02
+C0003,Jessica,Harvey,arnoldmaria@example.net,001-831-603-4131,1993-07-06,Sydney,AU,0.177,2020-05-21
+C0004,Michael,Phillips,johnronald@example.net,01184960276,1993-10-21,Sydney,AU,0.745,2023-09-28
+C0005,Gabrielle,Perez,richard13@example.net,+441214960376,1981-06-23,Sydney,AU,0.168,2021-04-03
+C0006,John,Powell,zbartlett@example.com,08 1012 2691,1976-03-22,Singapore,SG,0.066,2022-12-26
+C0007,Tony,Taylor,maldonadoamanda@example.com,(0131) 496 0146,1981-02-16,Sydney,AU,0.228,2021-03-30
+C0008,Antony,Walker,ruth89@example.org,(03)88095701,2006-11-06,Perth,AU,0.102,2021-01-14
+C0009,John,May,wcabrera@example.net,08 8248 9638,1997-03-13,Brisbane,AU,0.842,2021-08-27
+C0010,Wanda,Patel,ooneill@example.org,5983393010,1972-09-26,Brisbane,AU,0.254,2023-05-18
+C0011,Joshua,Lewis,esanchez@example.com,16566701,1977-08-26,Sydney,AU,0.219,2021-11-21
+C0012,John,Herrera,dwhite@example.org,+61.2.0801.3267,1964-10-18,Perth,AU,0.024,2019-07-03
+C0013,Nicholas,Baker,rodney87@example.org,(03)-0980-5009,1984-06-21,Brisbane,AU,0.173,2020-05-05
+C0014,Susan,York,leonardjoe@example.org,(0118) 496 0990,1955-10-31,Sydney,AU,0.198,2023-12-20
+C0015,Zoe,Donovan,john62@example.net,(0121) 4960751,1981-06-09,Melbourne,AU,0.843,2023-10-17
+C0016,Charles,Wagner,nicole35@example.com,+61.7.9808.4124,1957-07-15,Singapore,SG,0.083,2023-09-16
+C0017,Joseph,Kelly,gracefarrell@example.net,801-264-0052x427,1955-05-17,Brisbane,AU,0.894,2020-04-09
+C0018,Alan,Aguilar,tanderson@example.com,(03)31586923,2004-09-07,Brisbane,AU,0.211,2022-07-05
+C0019,Harry,Patton,josephcobb@example.org,2735375433,1972-08-03,Sydney,AU,0.95,2019-08-05
+C0020,Michael,Matthews,matthew14@example.org,+44118 4960019,1973-10-11,Melbourne,AU,0.049,2021-09-02
+C0021,Catherine,Clark,conorthomas@example.com,0483 561 595,2007-12-17,Melbourne,AU,0.205,2021-07-23
+C0022,Dylan,Miles,angela36@example.net,+1-729-994-6804x43699,1980-05-04,Sydney,AU,0.069,2020-10-26
+C0023,Elaine,Thompson,zachary95@example.org,+61.443.320.037,2008-01-29,Brisbane,AU,0.796,2022-11-16
+C0024,Olivia,Chamberlain,phughes@example.org,+44292018016,1962-03-22,Brisbane,AU,0.064,2023-05-30
+C0025,Brent,Lowery,danderson@example.net,+44(0)1914960957,2005-09-18,Perth,AU,0.043,2023-04-19
+C0026,Maria,Williams,wcole@example.org,+44(0)118 4960873,1980-03-09,Brisbane,AU,0.224,2021-06-07
+C0027,Joseph,Orozco,edwardreyes@example.org,+44117 496 0166,1987-03-06,Perth,AU,0.906,2022-07-16
+C0028,Jamie,Price,baxterbeverley@example.com,9545668893,1979-11-29,Brisbane,AU,0.733,2019-04-02
+C0029,Matthew,Roberts,jadebell@example.net,+44113 496 0699,1952-02-05,Sydney,AU,0.258,2022-08-25
+C0030,Michelle,Williams,jason55@example.com,001-564-217-0805x31003,1960-08-15,Melbourne,AU,0.903,2020-01-29
+C0031,Elizabeth,May,katie29@example.net,(01632) 960 124,1989-08-19,Sydney,AU,0.115,2021-08-28
+C0032,Sian,Sanders,keithwright@example.net,49190586,1975-06-21,Perth,AU,0.159,2023-04-22
+C0033,Maurice,Atkinson,hamiltonmichael@example.com,(0116) 496 0628,1968-08-18,Sydney,AU,0.731,2023-08-01
+C0034,Steven,Wright,mariahmiller@example.com,+61.8.5075.2735,1973-05-31,Brisbane,AU,0.231,2021-05-09
+C0035,Mark,Wells,jenniferfreeman@example.org,0161 4960770,1970-04-11,Brisbane,AU,0.13,2022-06-11
+C0036,Norman,Beck,wtran@example.com,+441914960557,1971-02-13,Brisbane,AU,0.805,2020-12-18
+C0037,Jennifer,Wilson,alexstevens@example.com,001-498-694-1343x5240,1953-12-18,Melbourne,AU,0.261,2021-06-27
+C0038,Malcolm,Taylor,salasaudrey@example.com,252.404.7116x719,2005-06-14,Melbourne,AU,0.046,2021-08-02
+C0039,Victoria,Grant,kimberlyjames@example.com,001-564-699-0913,1955-10-11,Sydney,AU,0.18,2021-01-16
+C0040,Andrea,Smith,ocarter@example.com,0121 496 0713,2003-11-12,Sydney,AU,0.279,2020-09-07
+C0041,Danny,Holland,charlesmartin@example.com,+44(0)1632960947,1982-02-23,London,UK,0.072,2021-08-03
+C0042,Sophie,Mason,cmiller@example.com,+44(0)121 4960940,1965-10-30,Sydney,AU,0.026,2023-11-24
+C0043,Michael,Perry,millerclive@example.com,+44(0)28 9018742,1979-11-30,Sydney,AU,0.85,2023-03-09
+C0044,Theodore,Cook,taylorhugh@example.com,+44161 496 0468,1981-03-15,Melbourne,AU,0.039,2021-09-05
+C0045,Marcus,Hancock,mgutierrez@example.net,+1-277-503-4824x771,1961-01-11,Melbourne,AU,0.08,2023-09-09
+C0046,Andrea,Walker,pvalentine@example.org,001-548-446-7737x826,1969-01-19,Singapore,SG,0.289,2021-11-22
+C0047,Vincent,Campbell,cgrimes@example.net,(858)286-7533x963,2000-12-05,Perth,AU,0.214,2022-03-31
+C0048,Vanessa,Robinson,martineztammy@example.com,+61.2.8702.6217,1973-04-16,Brisbane,AU,0.131,2022-05-20
+C0049,Jonathan,Phelps,owatson@example.net,+1-309-313-4316,1961-07-29,Sydney,AU,0.074,2021-07-20
+C0050,Brandon,Carter,hthomas@example.com,+4429 2018 0222,1991-09-24,Sydney,AU,0.176,2021-01-19
+C0051,Roberta,Hall,kelly40@example.com,+1-982-317-5946x47436,1976-03-15,Melbourne,AU,0.002,2022-01-21
+C0052,Bryan,Harris,krobertson@example.net,0114 496 0974,1991-07-25,Sydney,AU,0.069,2020-11-12
+C0053,Karl,Smith,teresaglover@example.net,+44(0)113 4960470,1975-01-30,New York,US,0.021,2020-02-14
+C0054,Renee,Burgess,davidryan@example.com,+441614960424,2005-02-18,Perth,AU,0.064,2021-11-19
+C0055,Taylor,Taylor,zcoffey@example.net,860-748-1754,1996-03-05,Perth,AU,0.073,2023-01-05
+C0056,Christine,Mills,eileencollins@example.com,(0121)4960612,1952-10-13,Perth,AU,0.057,2023-03-12
+C0057,Colton,Kirk,ellen86@example.net,+441632 960 261,1992-02-24,Perth,AU,0.106,2021-05-20
+C0058,Hannah,Ramos,cory58@example.net,2642317139,1966-10-29,Sydney,AU,0.202,2023-10-22
+C0059,Casey,Martin,markhernandez@example.net,(03) 2842 1020,2004-01-05,Melbourne,AU,0.018,2021-10-03
+C0060,Grant,Martinez,reesethomas@example.com,+4420 74960178,1992-02-10,Melbourne,AU,0.075,2023-06-10
+C0061,Stephen,Brown,gsimmons@example.com,(0151)4960115,1960-05-06,Perth,AU,0.042,2020-01-29
+C0062,Claudia,Parry,hvang@example.com,896.311.8367x36576,1979-04-18,Perth,AU,0.075,2021-03-03
+C0063,Stephanie,Preston,deckerchristopher@example.org,+44(0)1632 960 528,1990-02-28,Lagos,NG,0.242,2023-10-13
+C0064,Elizabeth,Gomez,utaylor@example.org,+1-745-319-8327x315,1989-04-27,Melbourne,AU,0.015,2022-08-27
+C0065,Brenda,Davies,johnsylvia@example.net,8243455022,2000-09-03,Sydney,AU,0.291,2019-04-07
+C0066,Julie,Bennett,eric45@example.net,+44(0)114 496 0022,1953-08-21,Perth,AU,0.05,2019-09-12
+C0067,Scott,Tucker,wnelson@example.net,(08)14978403,1991-01-14,Melbourne,AU,0.259,2019-01-25
+C0068,Kevin,Saunders,mark07@example.net,(826)283-8851,1951-07-12,Brisbane,AU,0.114,2019-08-31
+C0069,Barbara,Ahmed,zharris@example.org,(897)351-6136,1971-05-14,London,UK,0.278,2021-11-21
+C0070,Mason,Jones,hillgordon@example.com,001-923-912-4329x2127,1988-08-31,London,UK,0.744,2021-10-02
+C0071,Guy,Gonzales,ywelch@example.com,01144960581,1981-09-03,Lagos,NG,0.727,2019-04-28
+C0072,Miguel,Jones,jford@example.net,+61.3.5978.2071,1998-11-11,Sydney,AU,0.174,2023-04-18
+C0073,Kyle,Wright,nwarren@example.org,(846)665-9051x518,1999-07-03,Brisbane,AU,0.986,2020-04-13
+C0074,Christopher,Dale,tammy62@example.net,+44(0)114 496 0486,2004-02-15,Melbourne,AU,0.017,2020-02-03
+C0075,Rita,Turner,willismary@example.net,4544235733,1970-05-19,Melbourne,AU,0.021,2023-04-28
+C0076,Kerry,Stanley,jodiepatel@example.org,+61 427 065 379,2001-06-14,Melbourne,AU,0.804,2022-10-27
+C0077,Amanda,Sheppard,michealvalentine@example.com,001-346-388-6239x24075,1955-12-17,Perth,AU,0.942,2021-04-28
+C0078,Rebecca,Guerra,lisawilkerson@example.org,2687536153,2007-05-11,Sydney,AU,0.126,2021-11-08
+C0079,Devin,Lowery,katherineharrison@example.net,0432.8986,2003-01-26,Brisbane,AU,0.28,2021-01-09
+C0080,David,Barnes,fcollins@example.net,(0113) 4960893,1960-01-09,Brisbane,AU,0.072,2022-08-27
+C0081,Christina,Duncan,millsmichael@example.net,+44(0)161 496 0880,1982-03-31,Brisbane,AU,0.137,2022-04-17
+C0082,Jon,Kelly,john19@example.net,(405)385-2772,2003-01-27,Melbourne,AU,0.003,2019-04-26
+C0083,James,Blackwell,zachary87@example.com,+61-434-505-415,1977-06-22,Sydney,AU,0.022,2022-09-29
+C0084,Matthew,Crawford,sandra84@example.org,0151 496 0169,1987-05-16,Brisbane,AU,0.04,2021-09-25
+C0085,Christopher,Doyle,cjackson@example.com,4592640165,2008-01-02,Sydney,AU,0.264,2022-09-24
+C0086,David,Osborne,patrick90@example.net,+61.475.571.928,1977-05-04,Melbourne,AU,0.719,2021-05-16
+C0087,Susan,Fitzgerald,hmcintyre@example.com,001-973-394-7312x172,2007-10-16,Brisbane,AU,0.184,2021-12-16
+C0088,Gary,Freeman,jenniferho@example.net,(03)13237058,1975-05-11,Sydney,AU,0.2,2023-09-11
+C0089,Cheryl,Jones,xfox@example.com,+44114 496 0251,1981-12-14,Sydney,AU,0.282,2023-05-28
+C0090,David,Dawson,ryanbartlett@example.org,0424 225 358,2007-10-26,Sydney,AU,0.267,2021-02-18
+C0091,Cynthia,Robertson,jayne81@example.net,+44116 4960992,1995-01-29,Brisbane,AU,0.987,2021-11-15
+C0092,Luke,Miller,naomi39@example.com,+4428 9018078,1993-12-07,Brisbane,AU,0.061,2023-02-10
+C0093,Linda,Stevenson,barkereric@example.com,335.792.5556x258,1981-12-30,Brisbane,AU,0.152,2021-04-12
+C0094,John,Williams,kwright@example.com,(01632) 960532,1985-04-12,Sydney,AU,0.028,2023-03-31
+C0095,Tyler,Landry,nmorgan@example.net,3048797480,1968-04-01,Brisbane,AU,0.013,2022-02-11
+C0096,Michael,Williams,lindafisher@example.org,478.549.9121x65585,1984-11-24,Melbourne,AU,0.191,2023-04-04
+C0097,Brandon,Reeves,ghernandez@example.org,+1-652-969-4958x887,1975-04-27,Perth,AU,0.166,2019-12-08
+C0098,Brandy,Carr,andersonarthur@example.net,(020) 7496 0309,1961-11-09,Sydney,AU,0.034,2022-03-28
+C0099,Lorraine,Johnson,bateschloe@example.com,(563)768-9702,1982-10-21,Brisbane,AU,0.726,2022-03-17
+C0100,Sue,Barr,erica49@example.com,0784344375,1973-12-27,Brisbane,AU,0.129,2021-04-30

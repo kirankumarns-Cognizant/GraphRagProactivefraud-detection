@@ -1,0 +1,221 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  GraphRAG Fraud Detection POC - Core Infrastructure
+  Creates S3 bucket, IAM roles, and Lambda functions.
+  Neptune Analytics and Bedrock KB are created via scripts (not CFN-supported yet).
+
+Parameters:
+  ProjectName:
+    Type: String
+    Default: graphrag-fraud-poc
+    Description: Project name used for resource naming and tagging
+
+  Environment:
+    Type: String
+    Default: poc
+    AllowedValues: [poc, dev, prod]
+
+  Owner:
+    Type: String
+    Default: '118797'
+
+  NeptuneGraphId:
+    Type: String
+    Description: Neptune Analytics Graph ID (created via script)
+    Default: g-a6z57uuv00
+
+Resources:
+  # ============================================================
+  # S3 Bucket for data
+  # ============================================================
+  DataBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub '${ProjectName}-${AWS::AccountId}'
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectName
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Owner
+          Value: !Ref Owner
+
+  # ============================================================
+  # Lambda Execution Role
+  # ============================================================
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub '${ProjectName}-lambda-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: NeptuneAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - neptune-graph:ExecuteQuery
+                  - neptune-graph:GetGraph
+                Resource: !Sub 'arn:aws:neptune-graph:${AWS::Region}:${AWS::AccountId}:graph/*'
+        - PolicyName: BedrockAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                Resource:
+                  - !Sub 'arn:aws:bedrock:${AWS::Region}::foundation-model/us.anthropic.claude-sonnet-4-20250514-v1:0'
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectName
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Owner
+          Value: !Ref Owner
+
+  # ============================================================
+  # Lambda: Graph Query
+  # ============================================================
+  GraphQueryFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${ProjectName}-graph-query'
+      Runtime: python3.12
+      Handler: handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 30
+      MemorySize: 256
+      Environment:
+        Variables:
+          NEPTUNE_GRAPH_ID: !Ref NeptuneGraphId
+      Code:
+        ZipFile: |
+          # Placeholder - deploy actual code via update
+          def lambda_handler(event, context):
+              return {"statusCode": 200, "body": "Deploy actual handler code"}
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectName
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Owner
+          Value: !Ref Owner
+
+  # ============================================================
+  # Lambda: Risk Score
+  # ============================================================
+  RiskScoreFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${ProjectName}-risk-score'
+      Runtime: python3.12
+      Handler: handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 60
+      MemorySize: 256
+      Environment:
+        Variables:
+          NEPTUNE_GRAPH_ID: !Ref NeptuneGraphId
+      Code:
+        ZipFile: |
+          def lambda_handler(event, context):
+              return {"statusCode": 200, "body": "Deploy actual handler code"}
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectName
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Owner
+          Value: !Ref Owner
+
+  # ============================================================
+  # Lambda: Explain
+  # ============================================================
+  ExplainFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub '${ProjectName}-explain'
+      Runtime: python3.12
+      Handler: handler.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Timeout: 60
+      MemorySize: 256
+      Environment:
+        Variables:
+          NEPTUNE_GRAPH_ID: !Ref NeptuneGraphId
+      Code:
+        ZipFile: |
+          def lambda_handler(event, context):
+              return {"statusCode": 200, "body": "Deploy actual handler code"}
+      Tags:
+        - Key: Project
+          Value: !Ref ProjectName
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Owner
+          Value: !Ref Owner
+
+  # ============================================================
+  # Lambda Permissions for Bedrock Agent
+  # ============================================================
+  GraphQueryAgentPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref GraphQueryFunction
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceAccount: !Ref AWS::AccountId
+
+  RiskScoreAgentPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref RiskScoreFunction
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceAccount: !Ref AWS::AccountId
+
+  ExplainAgentPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref ExplainFunction
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceAccount: !Ref AWS::AccountId
+
+Outputs:
+  BucketName:
+    Value: !Ref DataBucket
+    Description: S3 data bucket name
+
+  GraphQueryFunctionArn:
+    Value: !GetAtt GraphQueryFunction.Arn
+    Description: Graph Query Lambda ARN
+
+  RiskScoreFunctionArn:
+    Value: !GetAtt RiskScoreFunction.Arn
+    Description: Risk Score Lambda ARN
+
+  ExplainFunctionArn:
+    Value: !GetAtt ExplainFunction.Arn
+    Description: Explain Lambda ARN
+
+  LambdaRoleArn:
+    Value: !GetAtt LambdaExecutionRole.Arn
+    Description: Lambda execution role ARN
