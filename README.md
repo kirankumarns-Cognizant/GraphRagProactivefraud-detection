@@ -225,8 +225,6 @@ python -m pytest tests/test_milestone_5.py -v
 ```
 fraud-detection/
 |-- README.md                          # This file
-|-- CLAUDE.md                          # AI agent instructions
-|-- graphrag-fraud-plan.md             # Master plan with milestones
 |-- requirements.txt                   # Core Python dependencies
 |
 |-- streamlit_app/                     # Streamlit Demo UI
@@ -269,11 +267,7 @@ fraud-detection/
 |   |-- cleanup_resources.py           # Resource teardown (--dry-run supported)
 |
 |-- tests/                             # Original POC milestone tests
-|-- docs/
-|   |-- design.md                      # Streamlit UI design document
-|   |-- e2e_plan.md                    # Implementation plan
-|   |-- demo_script.md                 # 5-scenario demo walkthrough
-|   |-- findings.md                    # POC findings and metrics
+|-- infrastructure/                    # CloudFormation templates
 ```
 
 ---
@@ -334,11 +328,11 @@ python scripts/cleanup_resources.py --neptune-only
 | `streamlit: not recognized` | Use `python -m streamlit run streamlit_app/app.py` |
 | Health check shows red for Neptune | Verify graph `g-a6z57uuv00` is running: `aws neptune-graph get-graph --graph-identifier g-a6z57uuv00` |
 | Health check shows red for SNS | Check topic exists: `aws sns list-topics` |
-| Bedrock shows amber | Model access may be pending DevOps approval. Tier 2 will use template fallback. |
+| Bedrock shows amber | Model access may be pending approval. Tier 2 will use template fallback. |
 | Score=0 for all personas | Neptune graph may be empty. Re-run data load or check graph status. |
 | SNS email not received | Confirm SNS subscription (check email for confirmation link) |
 | `ModuleNotFoundError` | Run `pip install -r requirements.txt && pip install -r streamlit_app/requirements.txt` |
-| AWS credentials expired | Run `aws sso login` or refresh your credentials, then restart the app |
+| AWS credentials expired | Run `saml2aws login` or `aws sso login`, then restart the app |
 
 ---
 
@@ -359,7 +353,7 @@ python scripts/cleanup_resources.py --neptune-only
 
 ## How the Streamlit App Talks to Tier 1 and Tier 2
 
-The Streamlit app **does not call Lambda functions remotely**. It **imports the handler functions directly as local Python modules** and calls them in-process. The only network calls are **boto3 to AWS services** (Neptune, Bedrock, SNS). There is no API Gateway, no Lambda invocation, and no HTTP middleware.
+The Streamlit app **does not call Lambda functions remotely**. It **imports the handler functions directly as local Python modules** and calls them in-process. The only network calls are **boto3 to AWS services** (Neptune, Bedrock, SNS).
 
 ### Communication Flow
 
@@ -369,57 +363,10 @@ Streamlit App (app.py)
     |-- engine/scoring.py          --imports-->  lambdas/fraud_check/handler.py
     |   calls score_transaction()                  |-- check_transaction()
     |                                              |     |-- Neptune openCypher queries (boto3)
-    |                                              |     |-- Returns {risk_score, rules_triggered}
     |
     |-- engine/explainer.py        --imports-->  lambdas/explain/handler.py
-    |   calls explain_entity()                     |-- gather_evidence()
-    |                                              |     |-- Neptune queries (4 evidence types)
-    |                                              |-- generate_explanation()
-    |                                                    |-- Bedrock invoke_model (Claude Sonnet 4)
+    |   calls explain_entity()                     |-- gather_evidence() --> Neptune
+    |                                              |-- generate_explanation() --> Bedrock
     |
     |-- engine/notifier.py         --direct-->   SNS publish (boto3)
 ```
-
-### Tier 1: Graph Rules (Deterministic)
-
-When the user clicks **"Submit Transaction"**, the following chain executes:
-
-1. `transaction_form.py` calls `score_transaction()` in the engine wrapper
-2. `score_transaction()` calls `check_transaction()` imported from `lambdas/fraud_check/handler.py`
-3. `check_transaction()` creates a boto3 Neptune client and runs **6 openCypher queries** directly against Neptune Analytics
-4. Returns `{risk_score: 90, rules_triggered: [...]}`
-5. `score_transaction()` applies three-tier band classification (APPROVE / REVIEW / REJECT)
-6. Detects silent failures and handles AWS errors
-7. Result is displayed in the dashboard
-
-### Tier 2: LLM Explanation (Probabilistic)
-
-When the user clicks **"Explain with AI"**, the following chain executes:
-
-1. `dashboard.py` calls `explain_entity()` in the engine wrapper
-2. `explain_entity()` calls `gather_evidence()` imported from `lambdas/explain/handler.py`
-3. `gather_evidence()` runs **5 Neptune queries** (entity properties, shared devices, known associates, transaction patterns, multi-hop network)
-4. Then calls `generate_explanation()` (also from the explain handler)
-5. `generate_explanation()` calls **Bedrock `invoke_model`** with Claude Sonnet 4, passing the evidence as a structured prompt
-6. If Bedrock fails, falls back to `_template_explanation()` (no crash)
-7. Explanation is rendered in the dashboard
-
-### Import Map
-
-| What Streamlit Imports | From Where | Network Call (via boto3) |
-|---|---|---|
-| `check_transaction()` | `lambdas/fraud_check/handler.py` | Neptune Analytics |
-| `gather_evidence()` | `lambdas/explain/handler.py` | Neptune Analytics |
-| `generate_explanation()` | `lambdas/explain/handler.py` | Bedrock Runtime |
-| `_template_explanation()` | `lambdas/explain/handler.py` | None (local fallback) |
-| SNS publish | `engine/notifier.py` (direct) | SNS |
-
-### Why Direct Imports Instead of Lambda Invocations?
-
-The Lambda handlers were originally written for deployment as AWS Lambda functions (they have `lambda_handler(event, context)` entry points). However, the Streamlit app **bypasses the Lambda layer** and imports the inner business-logic functions directly because:
-
-- **Lower latency**: No Lambda cold start or API Gateway overhead
-- **Simpler debugging**: Errors surface directly in the Streamlit process
-- **No extra AWS cost**: No Lambda invocation charges during the demo
-- **Same code path**: The graph queries and Bedrock calls are identical whether run inside Lambda or locally
-- **POC flexibility**: Easy to modify thresholds and test without redeploying Lambda functions
